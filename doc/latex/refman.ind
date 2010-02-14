@@ -1,0 +1,85 @@
+\begin{theindex}
+
+  \item {abc}
+    \subitem {main.c}, \hyperpage{12}
+
+  \indexspace
+
+  \item {fsm.c}, \hyperpage{7}
+    \subitem {fsm\_\discretionary {-}{}{}add}, \hyperpage{7}
+    \subitem {fsm\_\discretionary {-}{}{}default}, \hyperpage{8}
+    \subitem {fsm\_\discretionary {-}{}{}init}, \hyperpage{8}
+    \subitem {fsm\_\discretionary {-}{}{}main}, \hyperpage{8}
+    \subitem {fsm\_\discretionary {-}{}{}remove}, \hyperpage{8}
+    \subitem {fsm\_\discretionary {-}{}{}terminate}, \hyperpage{8}
+    \subitem {fsm\_\discretionary {-}{}{}to\_\discretionary {-}{}{}state}, \hyperpage{8}
+  \item {fsm.h}, \hyperpage{9}
+    \subitem {fsm\_\discretionary {-}{}{}add}, \hyperpage{9}
+    \subitem {fsm\_\discretionary {-}{}{}arg\_\discretionary {-}{}{}num}, \hyperpage{10}
+    \subitem {fsm\_\discretionary {-}{}{}arg\_\discretionary {-}{}{}value}, \hyperpage{10}
+    \subitem {fsm\_\discretionary {-}{}{}base}, \hyperpage{11}
+    \subitem {fsm\_\discretionary {-}{}{}cur\_\discretionary {-}{}{}state}, \hyperpage{11}
+    \subitem {fsm\_\discretionary {-}{}{}default}, \hyperpage{9}
+    \subitem {fsm\_\discretionary {-}{}{}init}, \hyperpage{10}
+    \subitem {fsm\_\discretionary {-}{}{}main}, \hyperpage{10}
+    \subitem {fsm\_\discretionary {-}{}{}remove}, \hyperpage{10}
+    \subitem {fsm\_\discretionary {-}{}{}terminate}, \hyperpage{10}
+    \subitem {fsm\_\discretionary {-}{}{}to\_\discretionary {-}{}{}state}, \hyperpage{10}
+  \item {fsm\_\discretionary {-}{}{}add}
+    \subitem {fsm.c}, \hyperpage{7}
+    \subitem {fsm.h}, \hyperpage{9}
+  \item {fsm\_\discretionary {-}{}{}arg\_\discretionary {-}{}{}num}
+    \subitem {fsm.h}, \hyperpage{10}
+  \item {fsm\_\discretionary {-}{}{}arg\_\discretionary {-}{}{}value}
+    \subitem {fsm.h}, \hyperpage{10}
+  \item {fsm\_\discretionary {-}{}{}base}
+    \subitem {fsm.h}, \hyperpage{11}
+  \item {fsm\_\discretionary {-}{}{}cur\_\discretionary {-}{}{}state}
+    \subitem {fsm.h}, \hyperpage{11}
+  \item {fsm\_\discretionary {-}{}{}default}
+    \subitem {fsm.c}, \hyperpage{8}
+    \subitem {fsm.h}, \hyperpage{9}
+  \item {fsm\_\discretionary {-}{}{}init}
+    \subitem {fsm.c}, \hyperpage{8}
+    \subitem {fsm.h}, \hyperpage{10}
+  \item {fsm\_\discretionary {-}{}{}main}
+    \subitem {fsm.c}, \hyperpage{8}
+    \subitem {fsm.h}, \hyperpage{10}
+  \item {fsm\_\discretionary {-}{}{}remove}
+    \subitem {fsm.c}, \hyperpage{8}
+    \subitem {fsm.h}, \hyperpage{10}
+  \item {fsm\_\discretionary {-}{}{}state}, \hyperpage{5}
+    \subitem {function}, \hyperpage{5}
+    \subitem {name}, \hyperpage{5}
+    \subitem {next}, \hyperpage{5}
+  \item {fsm\_\discretionary {-}{}{}terminate}
+    \subitem {fsm.c}, \hyperpage{8}
+    \subitem {fsm.h}, \hyperpage{10}
+  \item {fsm\_\discretionary {-}{}{}to\_\discretionary {-}{}{}state}
+    \subitem {fsm.c}, \hyperpage{8}
+    \subitem {fsm.h}, \hyperpage{10}
+  \item {function}
+    \subitem {fsm\_\discretionary {-}{}{}state}, \hyperpage{5}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.c}, \hyperpage{12}
+  \item {main.c}, \hyperpage{12}
+    \subitem {abc}, \hyperpage{12}
+    \subitem {main}, \hyperpage{12}
+    \subitem {xyz}, \hyperpage{12}
+
+  \indexspace
+
+  \item {name}
+    \subitem {fsm\_\discretionary {-}{}{}state}, \hyperpage{5}
+  \item {next}
+    \subitem {fsm\_\discretionary {-}{}{}state}, \hyperpage{5}
+
+  \indexspace
+
+  \item {xyz}
+    \subitem {main.c}, \hyperpage{12}
+
+\end{theindex}

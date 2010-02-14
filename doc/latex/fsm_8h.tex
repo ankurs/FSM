@@ -1,0 +1,125 @@
+\hypertarget{fsm_8h}{
+\section{fsm.h File Reference}
+\label{fsm_8h}\index{fsm.h@{fsm.h}}
+}
+
+
+an implementation for a FSM in C for HTTPServe, this file contains all definations required for FSM.  
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structfsm__state}{fsm\_\-state}
+\begin{DoxyCompactList}\small\item\em Stores information regarding state. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{fsm_8h_af80641621eebe25ddf5033218b78148c}{fsm\_\-init} ()
+\item 
+int \hyperlink{fsm_8h_aca34b3035afafacd66bc9646cb2fc7e2}{fsm\_\-main} ()
+\item 
+int \hyperlink{fsm_8h_a785281f5b9ecec8fdebdf35b87164df5}{fsm\_\-add} (char $\ast$state, void($\ast$fun)(int, void $\ast$$\ast$))
+\item 
+int \hyperlink{fsm_8h_ab3ba5df28cedba8b07cb0115044803ab}{fsm\_\-default} (char $\ast$state, void($\ast$fun)(int, void $\ast$$\ast$))
+\item 
+int \hyperlink{fsm_8h_ae16d0ddb2c31ef6ca16af18101bada93}{fsm\_\-remove} (char $\ast$state)
+\item 
+int \hyperlink{fsm_8h_a848093094aa1808fa8b706ea0c2189a4}{fsm\_\-to\_\-state} (char $\ast$state, int num, void $\ast$$\ast$arg)
+\item 
+void \hyperlink{fsm_8h_ae88c73afbad313b09ec31a8e790621a2}{fsm\_\-terminate} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structfsm__state}{fsm\_\-state} $\ast$ \hyperlink{fsm_8h_ac4c6b8bc970c4d8733d4933e9157a7f3}{fsm\_\-base}
+\item 
+char $\ast$ \hyperlink{fsm_8h_a8b2a719b86613195419902e64e609c6b}{fsm\_\-cur\_\-state}
+\item 
+int \hyperlink{fsm_8h_a481a1489f6341219be56a3b7385da7d4}{fsm\_\-arg\_\-num}
+\item 
+void $\ast$$\ast$ \hyperlink{fsm_8h_ae1957c70fe7b16c88ed5caa60109127c}{fsm\_\-arg\_\-value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+an implementation for a FSM in C for HTTPServe, this file contains all definations required for FSM. \begin{DoxyAuthor}{Author}
+Ankur Shrivastava 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{fsm_8h_a785281f5b9ecec8fdebdf35b87164df5}{
+\index{fsm.h@{fsm.h}!fsm\_\-add@{fsm\_\-add}}
+\index{fsm\_\-add@{fsm\_\-add}!fsm.h@{fsm.h}}
+\subsubsection[{fsm\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-add (char $\ast$ {\em state}, \/  void($\ast$)(int, void $\ast$$\ast$) {\em fun})}}
+\label{fsm_8h_a785281f5b9ecec8fdebdf35b87164df5}
+Function to add a new state to the FSM. 
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]name of the state to be added. \item[{\em fun}]name of the function to be executed for this state \end{DoxyParams}
+\hypertarget{fsm_8h_ab3ba5df28cedba8b07cb0115044803ab}{
+\index{fsm.h@{fsm.h}!fsm\_\-default@{fsm\_\-default}}
+\index{fsm\_\-default@{fsm\_\-default}!fsm.h@{fsm.h}}
+\subsubsection[{fsm\_\-default}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-default (char $\ast$ {\em state}, \/  void($\ast$)(int, void $\ast$$\ast$) {\em fun})}}
+\label{fsm_8h_ab3ba5df28cedba8b07cb0115044803ab}
+Function to add a default state to FSM.
+
+Adds a default state to FSM, this is the function called at the start of the FSM or in case of error, with the appropriate error code 
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]name of the state to be added. \item[{\em fun}]name of the function to be executed for this state \end{DoxyParams}
+\hypertarget{fsm_8h_af80641621eebe25ddf5033218b78148c}{
+\index{fsm.h@{fsm.h}!fsm\_\-init@{fsm\_\-init}}
+\index{fsm\_\-init@{fsm\_\-init}!fsm.h@{fsm.h}}
+\subsubsection[{fsm\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-init ()}}
+\label{fsm_8h_af80641621eebe25ddf5033218b78148c}
+Function to initialize the FSM \hypertarget{fsm_8h_aca34b3035afafacd66bc9646cb2fc7e2}{
+\index{fsm.h@{fsm.h}!fsm\_\-main@{fsm\_\-main}}
+\index{fsm\_\-main@{fsm\_\-main}!fsm.h@{fsm.h}}
+\subsubsection[{fsm\_\-main}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-main ()}}
+\label{fsm_8h_aca34b3035afafacd66bc9646cb2fc7e2}
+The FSM entry point, this is where execution of code begins in FSM. \hypertarget{fsm_8h_ae16d0ddb2c31ef6ca16af18101bada93}{
+\index{fsm.h@{fsm.h}!fsm\_\-remove@{fsm\_\-remove}}
+\index{fsm\_\-remove@{fsm\_\-remove}!fsm.h@{fsm.h}}
+\subsubsection[{fsm\_\-remove}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-remove (char $\ast$ {\em state})}}
+\label{fsm_8h_ae16d0ddb2c31ef6ca16af18101bada93}
+Function to remove a state from the FSM. 
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]name of state to be removed \end{DoxyParams}
+\hypertarget{fsm_8h_ae88c73afbad313b09ec31a8e790621a2}{
+\index{fsm.h@{fsm.h}!fsm\_\-terminate@{fsm\_\-terminate}}
+\index{fsm\_\-terminate@{fsm\_\-terminate}!fsm.h@{fsm.h}}
+\subsubsection[{fsm\_\-terminate}]{\setlength{\rightskip}{0pt plus 5cm}void fsm\_\-terminate ()}}
+\label{fsm_8h_ae88c73afbad313b09ec31a8e790621a2}
+Function for FSM termination \hypertarget{fsm_8h_a848093094aa1808fa8b706ea0c2189a4}{
+\index{fsm.h@{fsm.h}!fsm\_\-to\_\-state@{fsm\_\-to\_\-state}}
+\index{fsm\_\-to\_\-state@{fsm\_\-to\_\-state}!fsm.h@{fsm.h}}
+\subsubsection[{fsm\_\-to\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-to\_\-state (char $\ast$ {\em state}, \/  int {\em num}, \/  void $\ast$$\ast$ {\em arg})}}
+\label{fsm_8h_a848093094aa1808fa8b706ea0c2189a4}
+Function to change state.
+
+changes state to the new specified state, if the state does not exist returns error, state change is not triggered till function calling fsm\_\-to\_\-state returns 
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]name of state to chnage to \item[{\em num}]number of arguments \item[{\em arg}]arguments \end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{fsm_8h_a481a1489f6341219be56a3b7385da7d4}{
+\index{fsm.h@{fsm.h}!fsm\_\-arg\_\-num@{fsm\_\-arg\_\-num}}
+\index{fsm\_\-arg\_\-num@{fsm\_\-arg\_\-num}!fsm.h@{fsm.h}}
+\subsubsection[{fsm\_\-arg\_\-num}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf fsm\_\-arg\_\-num}}}
+\label{fsm_8h_a481a1489f6341219be56a3b7385da7d4}
+stores the number of argument passed to the nest state \hypertarget{fsm_8h_ae1957c70fe7b16c88ed5caa60109127c}{
+\index{fsm.h@{fsm.h}!fsm\_\-arg\_\-value@{fsm\_\-arg\_\-value}}
+\index{fsm\_\-arg\_\-value@{fsm\_\-arg\_\-value}!fsm.h@{fsm.h}}
+\subsubsection[{fsm\_\-arg\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$$\ast$ {\bf fsm\_\-arg\_\-value}}}
+\label{fsm_8h_ae1957c70fe7b16c88ed5caa60109127c}
+stores the values of arguments passed to the next state \hypertarget{fsm_8h_ac4c6b8bc970c4d8733d4933e9157a7f3}{
+\index{fsm.h@{fsm.h}!fsm\_\-base@{fsm\_\-base}}
+\index{fsm\_\-base@{fsm\_\-base}!fsm.h@{fsm.h}}
+\subsubsection[{fsm\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf fsm\_\-state}
+$\ast$  {\bf fsm\_\-base}}}
+\label{fsm_8h_ac4c6b8bc970c4d8733d4933e9157a7f3}
+base pointer, storing the default state information \hypertarget{fsm_8h_a8b2a719b86613195419902e64e609c6b}{
+\index{fsm.h@{fsm.h}!fsm\_\-cur\_\-state@{fsm\_\-cur\_\-state}}
+\index{fsm\_\-cur\_\-state@{fsm\_\-cur\_\-state}!fsm.h@{fsm.h}}
+\subsubsection[{fsm\_\-cur\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf fsm\_\-cur\_\-state}}}
+\label{fsm_8h_a8b2a719b86613195419902e64e609c6b}
+stores pointer of current FSM state 
