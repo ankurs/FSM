@@ -24,25 +24,33 @@ int fsm_init(struct fsm_object *obj)
 }
 
 /**
+ * Execution of next state takes place here
+ * @details function fsm_next can be used without fsm_main when want to hadel
+ * state execution and not rely on fsm_main 's loop
+ * @param obj pointer to structure of type fsm_object, which defines the FSM
+ */
+int fsm_next_state(struct fsm_object *obj)
+{
+    struct fsm_state *tmp = obj->fsm_base;
+    if ((obj->fsm_base==NULL)||(obj->fsm_cur_state_name==NULL))
+    {        
+        return -1;
+    }
+    while ((tmp->name != obj->fsm_cur_state_name)&&(tmp!=NULL))
+        tmp = tmp->next;
+    if (tmp == NULL)
+        return -1;
+    tmp->function(obj,obj->fsm_arg_num,obj->fsm_arg_value);
+    return 0;
+}
+
+/**
  * The FSM entry point, this is where execution of code begins in FSM.
  * @param obj pointer to structure of type fsm_object, which defines the FSM
  */
 int fsm_main(struct fsm_object *obj)
 {
-    struct fsm_state *tmp;
-    while (1)
-    {
-        tmp = obj->fsm_base;
-        if ((obj->fsm_base==NULL)||(obj->fsm_cur_state_name==NULL))
-        {        
-            return -1;
-        }
-        while ((tmp->name != obj->fsm_cur_state_name)&&(tmp!=NULL))
-            tmp = tmp->next;
-        if (tmp == NULL)
-            return -1;
-        tmp->function(obj,obj->fsm_arg_num,obj->fsm_arg_value);
-    }
+    while (!fsm_next_state(obj));
     return 0;
 }
 
@@ -67,8 +75,8 @@ int fsm_add(struct fsm_object *obj, char *state, void (*fun)(struct fsm_object *
 
 /**
  * Function to remove a state from the FSM.
- * @param state name of state to be removed
  * @param obj pointer to structure of type fsm_object, which defines the FSM
+ * @param state name of state to be removed
  */
 int fsm_remove(struct fsm_object *obj,char *state)
 {

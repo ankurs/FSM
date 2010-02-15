@@ -67,6 +67,13 @@ int fsm_init(struct fsm_object *obj);
 int fsm_main(struct fsm_object *obj);
 
 /**
+ * Execution of next state takes place here
+ * @details function fsm_next can be used without fsm_main when want to hadel
+ * state execution and not rely on fsm_main 's loop
+ */
+int fsm_next_state(struct fsm_object *obj);
+
+/**
  * Function to add a new state to the FSM.
  * @param obj pointer to structure of type fsm_object, which defines the FSM
  * @param state name of the state to be added.
@@ -85,8 +92,8 @@ int fsm_default(struct fsm_object *obj, void (*fun)(struct fsm_object *, int, vo
 
 /**
  * Function to remove a state from the FSM.
- * @param state name of state to be removed
  * @param obj pointer to structure of type fsm_object, which defines the FSM
+ * @param state name of state to be removed
  */
 int fsm_remove(struct fsm_object *obj, char *state);
 
