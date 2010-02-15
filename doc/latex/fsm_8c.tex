@@ -4,87 +4,93 @@
 }
 
 
-an implementation for a FSM in C for HTTPServe, this file contains implementation of definations in \char`\"{}fsm.h\char`\"{}.  
+an implementation for a FSM in C, this file contains implementation of definations.  
 {\ttfamily \#include \char`\"{}fsm.h\char`\"{}}\par
 {\ttfamily \#include $<$stdlib.h$>$}\par
 {\ttfamily \#include $<$string.h$>$}\par
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{fsm_8c_af80641621eebe25ddf5033218b78148c}{fsm\_\-init} ()
+int \hyperlink{fsm_8c_a7d9f32205d282874d1167e4f91311cfa}{fsm\_\-init} (struct \hyperlink{structfsm__object}{fsm\_\-object} $\ast$obj)
 \item 
-int \hyperlink{fsm_8c_a8d1e245793401a972ade9cd903674395}{fsm\_\-main} (char $\ast$def\_\-state)
+int \hyperlink{fsm_8c_a8ee06d483f437f6408cd515891a30a50}{fsm\_\-main} (struct \hyperlink{structfsm__object}{fsm\_\-object} $\ast$obj)
 \item 
-int \hyperlink{fsm_8c_a785281f5b9ecec8fdebdf35b87164df5}{fsm\_\-add} (char $\ast$state, void($\ast$fun)(int, void $\ast$$\ast$))
+int \hyperlink{fsm_8c_aeed86a14187df213c3ea7e9c8ce7d045}{fsm\_\-add} (struct \hyperlink{structfsm__object}{fsm\_\-object} $\ast$obj, char $\ast$state, void($\ast$fun)(int, void $\ast$$\ast$))
 \item 
-int \hyperlink{fsm_8c_ae16d0ddb2c31ef6ca16af18101bada93}{fsm\_\-remove} (char $\ast$state)
+int \hyperlink{fsm_8c_a31277e38d531321eed830cbaa3024a31}{fsm\_\-remove} (struct \hyperlink{structfsm__object}{fsm\_\-object} $\ast$obj, char $\ast$state)
 \item 
-int \hyperlink{fsm_8c_a848093094aa1808fa8b706ea0c2189a4}{fsm\_\-to\_\-state} (char $\ast$state, int num, void $\ast$$\ast$arg)
+int \hyperlink{fsm_8c_a8054eebfd3f366f29461388b7db6c5da}{fsm\_\-to\_\-state} (struct \hyperlink{structfsm__object}{fsm\_\-object} $\ast$obj, char $\ast$state, int num, void $\ast$$\ast$arg)
 \item 
-int \hyperlink{fsm_8c_ab3ba5df28cedba8b07cb0115044803ab}{fsm\_\-default} (char $\ast$state, void($\ast$fun)(int, void $\ast$$\ast$))
+int \hyperlink{fsm_8c_a1a9ea442e0125d5e73da5c02d03f52e7}{fsm\_\-default} (struct \hyperlink{structfsm__object}{fsm\_\-object} $\ast$obj, void($\ast$fun)(int, void $\ast$$\ast$))
 \item 
-void \hyperlink{fsm_8c_ae88c73afbad313b09ec31a8e790621a2}{fsm\_\-terminate} ()
+void \hyperlink{fsm_8c_a1e29b41ccb41ac220c1ffeb218881e2b}{fsm\_\-terminate} (struct \hyperlink{structfsm__object}{fsm\_\-object} $\ast$obj)
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-an implementation for a FSM in C for HTTPServe, this file contains implementation of definations in \char`\"{}fsm.h\char`\"{}. \begin{DoxyAuthor}{Author}
+an implementation for a FSM in C, this file contains implementation of definations. \begin{DoxyAuthor}{Author}
 Ankur Shrivastava 
 \end{DoxyAuthor}
 
 
 \subsection{Function Documentation}
-\hypertarget{fsm_8c_a785281f5b9ecec8fdebdf35b87164df5}{
+\hypertarget{fsm_8c_aeed86a14187df213c3ea7e9c8ce7d045}{
 \index{fsm.c@{fsm.c}!fsm\_\-add@{fsm\_\-add}}
 \index{fsm\_\-add@{fsm\_\-add}!fsm.c@{fsm.c}}
-\subsubsection[{fsm\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-add (char $\ast$ {\em state}, \/  void($\ast$)(int, void $\ast$$\ast$) {\em fun})}}
-\label{fsm_8c_a785281f5b9ecec8fdebdf35b87164df5}
+\subsubsection[{fsm\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-add (struct {\bf fsm\_\-object} $\ast$ {\em obj}, \/  char $\ast$ {\em state}, \/  void($\ast$)(int, void $\ast$$\ast$) {\em fun})}}
+\label{fsm_8c_aeed86a14187df213c3ea7e9c8ce7d045}
 Function to add a new state to the FSM. 
 \begin{DoxyParams}{Parameters}
-\item[{\em state}]name of the state to be added. \item[{\em fun}]name of the function to be executed for this state \end{DoxyParams}
-\hypertarget{fsm_8c_ab3ba5df28cedba8b07cb0115044803ab}{
+\item[{\em obj}]pointer to structure of type \hyperlink{structfsm__object}{fsm\_\-object}, which defines the FSM \item[{\em state}]name of the state to be added. \item[{\em fun}]name of the function to be executed for this state \end{DoxyParams}
+\hypertarget{fsm_8c_a1a9ea442e0125d5e73da5c02d03f52e7}{
 \index{fsm.c@{fsm.c}!fsm\_\-default@{fsm\_\-default}}
 \index{fsm\_\-default@{fsm\_\-default}!fsm.c@{fsm.c}}
-\subsubsection[{fsm\_\-default}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-default (char $\ast$ {\em state}, \/  void($\ast$)(int, void $\ast$$\ast$) {\em fun})}}
-\label{fsm_8c_ab3ba5df28cedba8b07cb0115044803ab}
+\subsubsection[{fsm\_\-default}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-default (struct {\bf fsm\_\-object} $\ast$ {\em obj}, \/  void($\ast$)(int, void $\ast$$\ast$) {\em fun})}}
+\label{fsm_8c_a1a9ea442e0125d5e73da5c02d03f52e7}
 Function to add a default state to FSM.
 
 Adds a default state to FSM, this is the function called at the start of the FSM or in case of error, with the appropriate error code 
 \begin{DoxyParams}{Parameters}
-\item[{\em state}]name of the state to be added. \item[{\em fun}]name of the function to be executed for this state \end{DoxyParams}
-\hypertarget{fsm_8c_af80641621eebe25ddf5033218b78148c}{
+\item[{\em obj}]pointer to structure of type \hyperlink{structfsm__object}{fsm\_\-object}, which defines the FSM \item[{\em fun}]name of the function to be executed for this state \end{DoxyParams}
+\hypertarget{fsm_8c_a7d9f32205d282874d1167e4f91311cfa}{
 \index{fsm.c@{fsm.c}!fsm\_\-init@{fsm\_\-init}}
 \index{fsm\_\-init@{fsm\_\-init}!fsm.c@{fsm.c}}
-\subsubsection[{fsm\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-init ()}}
-\label{fsm_8c_af80641621eebe25ddf5033218b78148c}
-Function to initialize the FSM \hypertarget{fsm_8c_a8d1e245793401a972ade9cd903674395}{
+\subsubsection[{fsm\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-init (struct {\bf fsm\_\-object} $\ast$ {\em obj})}}
+\label{fsm_8c_a7d9f32205d282874d1167e4f91311cfa}
+Function to initialize the FSM 
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]pointer to structure of type \hyperlink{structfsm__object}{fsm\_\-object}, which defines the FSM \end{DoxyParams}
+\hypertarget{fsm_8c_a8ee06d483f437f6408cd515891a30a50}{
 \index{fsm.c@{fsm.c}!fsm\_\-main@{fsm\_\-main}}
 \index{fsm\_\-main@{fsm\_\-main}!fsm.c@{fsm.c}}
-\subsubsection[{fsm\_\-main}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-main (char $\ast$ {\em def\_\-state})}}
-\label{fsm_8c_a8d1e245793401a972ade9cd903674395}
+\subsubsection[{fsm\_\-main}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-main (struct {\bf fsm\_\-object} $\ast$ {\em obj})}}
+\label{fsm_8c_a8ee06d483f437f6408cd515891a30a50}
 The FSM entry point, this is where execution of code begins in FSM. 
 \begin{DoxyParams}{Parameters}
-\item[{\em def\_\-state}]the default state of FSM \end{DoxyParams}
-\hypertarget{fsm_8c_ae16d0ddb2c31ef6ca16af18101bada93}{
+\item[{\em obj}]pointer to structure of type \hyperlink{structfsm__object}{fsm\_\-object}, which defines the FSM \end{DoxyParams}
+\hypertarget{fsm_8c_a31277e38d531321eed830cbaa3024a31}{
 \index{fsm.c@{fsm.c}!fsm\_\-remove@{fsm\_\-remove}}
 \index{fsm\_\-remove@{fsm\_\-remove}!fsm.c@{fsm.c}}
-\subsubsection[{fsm\_\-remove}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-remove (char $\ast$ {\em state})}}
-\label{fsm_8c_ae16d0ddb2c31ef6ca16af18101bada93}
+\subsubsection[{fsm\_\-remove}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-remove (struct {\bf fsm\_\-object} $\ast$ {\em obj}, \/  char $\ast$ {\em state})}}
+\label{fsm_8c_a31277e38d531321eed830cbaa3024a31}
 Function to remove a state from the FSM. 
 \begin{DoxyParams}{Parameters}
-\item[{\em state}]name of state to be removed \end{DoxyParams}
-\hypertarget{fsm_8c_ae88c73afbad313b09ec31a8e790621a2}{
+\item[{\em state}]name of state to be removed \item[{\em obj}]pointer to structure of type \hyperlink{structfsm__object}{fsm\_\-object}, which defines the FSM \end{DoxyParams}
+\hypertarget{fsm_8c_a1e29b41ccb41ac220c1ffeb218881e2b}{
 \index{fsm.c@{fsm.c}!fsm\_\-terminate@{fsm\_\-terminate}}
 \index{fsm\_\-terminate@{fsm\_\-terminate}!fsm.c@{fsm.c}}
-\subsubsection[{fsm\_\-terminate}]{\setlength{\rightskip}{0pt plus 5cm}void fsm\_\-terminate ()}}
-\label{fsm_8c_ae88c73afbad313b09ec31a8e790621a2}
-Function for FSM termination \hypertarget{fsm_8c_a848093094aa1808fa8b706ea0c2189a4}{
+\subsubsection[{fsm\_\-terminate}]{\setlength{\rightskip}{0pt plus 5cm}void fsm\_\-terminate (struct {\bf fsm\_\-object} $\ast$ {\em obj})}}
+\label{fsm_8c_a1e29b41ccb41ac220c1ffeb218881e2b}
+Function for FSM termination 
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]pointer to structure of type \hyperlink{structfsm__object}{fsm\_\-object}, which defines the FSM \end{DoxyParams}
+\hypertarget{fsm_8c_a8054eebfd3f366f29461388b7db6c5da}{
 \index{fsm.c@{fsm.c}!fsm\_\-to\_\-state@{fsm\_\-to\_\-state}}
 \index{fsm\_\-to\_\-state@{fsm\_\-to\_\-state}!fsm.c@{fsm.c}}
-\subsubsection[{fsm\_\-to\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-to\_\-state (char $\ast$ {\em state}, \/  int {\em num}, \/  void $\ast$$\ast$ {\em arg})}}
-\label{fsm_8c_a848093094aa1808fa8b706ea0c2189a4}
+\subsubsection[{fsm\_\-to\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}int fsm\_\-to\_\-state (struct {\bf fsm\_\-object} $\ast$ {\em obj}, \/  char $\ast$ {\em state}, \/  int {\em num}, \/  void $\ast$$\ast$ {\em arg})}}
+\label{fsm_8c_a8054eebfd3f366f29461388b7db6c5da}
 Function to change state.
 
 changes state to the new specified state, if the state does not exist returns error, state change is not triggered till function calling fsm\_\-to\_\-state returns 
 \begin{DoxyParams}{Parameters}
-\item[{\em state}]name of state to chnage to \item[{\em num}]number of arguments \item[{\em arg}]arguments \end{DoxyParams}
+\item[{\em obj}]pointer to structure of type \hyperlink{structfsm__object}{fsm\_\-object}, which defines the FSM \item[{\em state}]name of state to chnage to \item[{\em num}]number of arguments \item[{\em arg}]arguments \end{DoxyParams}

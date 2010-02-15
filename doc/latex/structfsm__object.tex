@@ -1,0 +1,58 @@
+\hypertarget{structfsm__object}{
+\section{fsm\_\-object Struct Reference}
+\label{structfsm__object}\index{fsm\_\-object@{fsm\_\-object}}
+}
+
+
+stores info regarding state machine  
+
+
+{\ttfamily \#include $<$fsm.h$>$}\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structfsm__state}{fsm\_\-state} $\ast$ \hyperlink{structfsm__object_ad7a2507fbf7b66a8833e29eed8fb1184}{fsm\_\-base}
+\item 
+struct \hyperlink{structfsm__state}{fsm\_\-state} $\ast$ \hyperlink{structfsm__object_ad5eb19f825d8f434149e720ad6d0fa4a}{fsm\_\-cur\_\-state}
+\item 
+char $\ast$ \hyperlink{structfsm__object_aec65222e985afecb031f8d04646f8d6d}{fsm\_\-cur\_\-state\_\-name}
+\item 
+int \hyperlink{structfsm__object_a1e132e0f019f722123f4aff947352cca}{fsm\_\-arg\_\-num}
+\item 
+void $\ast$$\ast$ \hyperlink{structfsm__object_a9de2beefef0bfeb09802fa390187dd06}{fsm\_\-arg\_\-value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+stores info regarding state machine 
+
+\subsection{Member Data Documentation}
+\hypertarget{structfsm__object_a1e132e0f019f722123f4aff947352cca}{
+\index{fsm\_\-object@{fsm\_\-object}!fsm\_\-arg\_\-num@{fsm\_\-arg\_\-num}}
+\index{fsm\_\-arg\_\-num@{fsm\_\-arg\_\-num}!fsm_object@{fsm\_\-object}}
+\subsubsection[{fsm\_\-arg\_\-num}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf fsm\_\-object::fsm\_\-arg\_\-num}}}
+\label{structfsm__object_a1e132e0f019f722123f4aff947352cca}
+pointer to current FSM state \hypertarget{structfsm__object_a9de2beefef0bfeb09802fa390187dd06}{
+\index{fsm\_\-object@{fsm\_\-object}!fsm\_\-arg\_\-value@{fsm\_\-arg\_\-value}}
+\index{fsm\_\-arg\_\-value@{fsm\_\-arg\_\-value}!fsm_object@{fsm\_\-object}}
+\subsubsection[{fsm\_\-arg\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$$\ast$ {\bf fsm\_\-object::fsm\_\-arg\_\-value}}}
+\label{structfsm__object_a9de2beefef0bfeb09802fa390187dd06}
+values of arguments passed to the next state \hypertarget{structfsm__object_ad7a2507fbf7b66a8833e29eed8fb1184}{
+\index{fsm\_\-object@{fsm\_\-object}!fsm\_\-base@{fsm\_\-base}}
+\index{fsm\_\-base@{fsm\_\-base}!fsm_object@{fsm\_\-object}}
+\subsubsection[{fsm\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf fsm\_\-state}$\ast$ {\bf fsm\_\-object::fsm\_\-base}\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{structfsm__object_ad7a2507fbf7b66a8833e29eed8fb1184}
+pointer to the linked list of \hyperlink{structfsm__state}{fsm\_\-state} structures \hypertarget{structfsm__object_ad5eb19f825d8f434149e720ad6d0fa4a}{
+\index{fsm\_\-object@{fsm\_\-object}!fsm\_\-cur\_\-state@{fsm\_\-cur\_\-state}}
+\index{fsm\_\-cur\_\-state@{fsm\_\-cur\_\-state}!fsm_object@{fsm\_\-object}}
+\subsubsection[{fsm\_\-cur\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf fsm\_\-state}$\ast$ {\bf fsm\_\-object::fsm\_\-cur\_\-state}\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{structfsm__object_ad5eb19f825d8f434149e720ad6d0fa4a}
+name of current FSM state \hypertarget{structfsm__object_aec65222e985afecb031f8d04646f8d6d}{
+\index{fsm\_\-object@{fsm\_\-object}!fsm\_\-cur\_\-state\_\-name@{fsm\_\-cur\_\-state\_\-name}}
+\index{fsm\_\-cur\_\-state\_\-name@{fsm\_\-cur\_\-state\_\-name}!fsm_object@{fsm\_\-object}}
+\subsubsection[{fsm\_\-cur\_\-state\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf fsm\_\-object::fsm\_\-cur\_\-state\_\-name}}}
+\label{structfsm__object_aec65222e985afecb031f8d04646f8d6d}
+number of argument passed to the nest state 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{fsm_8h}{fsm.h}\end{DoxyCompactItemize}

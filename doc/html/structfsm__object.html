@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>HTTPServe: fsm_state Struct Reference</title>
+<title>HTTPServe: fsm_object Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -43,61 +43,91 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>fsm_state Struct Reference</h1><!-- doxytag: class="fsm_state" -->
-<p>Stores information regarding state.  
+<h1>fsm_object Struct Reference</h1><!-- doxytag: class="fsm_object" -->
+<p>stores info regarding state machine  
 <a href="#_details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="fsm_8h_source.html">fsm.h</a>&gt;</code></p>
 
-<p><a href="structfsm__state-members.html">List of all members.</a></p>
+<p><a href="structfsm__object-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfsm__state.html#a440a3e1fb27cc0f14c33b3ce17e46fcc">name</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfsm__state.html#a3610efd3db68ca9d4822540a830a8684">function</a> )(int, void **)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structfsm__state.html">fsm_state</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfsm__state.html#a9a6566cdfa091b10cb9a68928d7340bb">next</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structfsm__state.html">fsm_state</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfsm__object.html#ad7a2507fbf7b66a8833e29eed8fb1184">fsm_base</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structfsm__state.html">fsm_state</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfsm__object.html#ad5eb19f825d8f434149e720ad6d0fa4a">fsm_cur_state</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfsm__object.html#aec65222e985afecb031f8d04646f8d6d">fsm_cur_state_name</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfsm__object.html#a1e132e0f019f722123f4aff947352cca">fsm_arg_num</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void **&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfsm__object.html#a9de2beefef0bfeb09802fa390187dd06">fsm_arg_value</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Stores information regarding state. </p>
+<p>stores info regarding state machine </p>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a3610efd3db68ca9d4822540a830a8684"></a><!-- doxytag: member="fsm_state::function" ref="a3610efd3db68ca9d4822540a830a8684" args=")(int, void **)" -->
+<a class="anchor" id="a1e132e0f019f722123f4aff947352cca"></a><!-- doxytag: member="fsm_object::fsm_arg_num" ref="a1e132e0f019f722123f4aff947352cca" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* <a class="el" href="structfsm__state.html#a3610efd3db68ca9d4822540a830a8684">fsm_state::function</a>)(int, void **)</td>
+          <td class="memname">int <a class="el" href="structfsm__object.html#a1e132e0f019f722123f4aff947352cca">fsm_object::fsm_arg_num</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>stores the function pointer for the state </p>
+<p>pointer to current FSM state </p>
 
 </div>
 </div>
-<a class="anchor" id="a440a3e1fb27cc0f14c33b3ce17e46fcc"></a><!-- doxytag: member="fsm_state::name" ref="a440a3e1fb27cc0f14c33b3ce17e46fcc" args="" -->
+<a class="anchor" id="a9de2beefef0bfeb09802fa390187dd06"></a><!-- doxytag: member="fsm_object::fsm_arg_value" ref="a9de2beefef0bfeb09802fa390187dd06" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* <a class="el" href="structfsm__state.html#a440a3e1fb27cc0f14c33b3ce17e46fcc">fsm_state::name</a></td>
+          <td class="memname">void** <a class="el" href="structfsm__object.html#a9de2beefef0bfeb09802fa390187dd06">fsm_object::fsm_arg_value</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Stores the name of the state </p>
+<p>values of arguments passed to the next state </p>
 
 </div>
 </div>
-<a class="anchor" id="a9a6566cdfa091b10cb9a68928d7340bb"></a><!-- doxytag: member="fsm_state::next" ref="a9a6566cdfa091b10cb9a68928d7340bb" args="" -->
+<a class="anchor" id="ad7a2507fbf7b66a8833e29eed8fb1184"></a><!-- doxytag: member="fsm_object::fsm_base" ref="ad7a2507fbf7b66a8833e29eed8fb1184" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structfsm__state.html">fsm_state</a>* <a class="el" href="structfsm__state.html#a9a6566cdfa091b10cb9a68928d7340bb">fsm_state::next</a><code> [read]</code></td>
+          <td class="memname">struct <a class="el" href="structfsm__state.html">fsm_state</a>* <a class="el" href="structfsm__object.html#ad7a2507fbf7b66a8833e29eed8fb1184">fsm_object::fsm_base</a><code> [read]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>pointer to the next state </p>
+<p>pointer to the linked list of <a class="el" href="structfsm__state.html" title="Stores information regarding state.">fsm_state</a> structures </p>
+
+</div>
+</div>
+<a class="anchor" id="ad5eb19f825d8f434149e720ad6d0fa4a"></a><!-- doxytag: member="fsm_object::fsm_cur_state" ref="ad5eb19f825d8f434149e720ad6d0fa4a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structfsm__state.html">fsm_state</a>* <a class="el" href="structfsm__object.html#ad5eb19f825d8f434149e720ad6d0fa4a">fsm_object::fsm_cur_state</a><code> [read]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>name of current FSM state </p>
+
+</div>
+</div>
+<a class="anchor" id="aec65222e985afecb031f8d04646f8d6d"></a><!-- doxytag: member="fsm_object::fsm_cur_state_name" ref="aec65222e985afecb031f8d04646f8d6d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structfsm__object.html#aec65222e985afecb031f8d04646f8d6d">fsm_object::fsm_cur_state_name</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>number of argument passed to the nest state </p>
 
 </div>
 </div>

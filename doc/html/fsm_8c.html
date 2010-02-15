@@ -44,32 +44,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <h1>fsm.c File Reference</h1>
-<p>an implementation for a FSM in C for HTTPServe, this file contains implementation of definations in "fsm.h".  
+<p>an implementation for a FSM in C, this file contains implementation of definations.  
 <a href="#_details">More...</a></p>
 <code>#include &quot;<a class="el" href="fsm_8h_source.html">fsm.h</a>&quot;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;string.h&gt;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#af80641621eebe25ddf5033218b78148c">fsm_init</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a8d1e245793401a972ade9cd903674395">fsm_main</a> (char *def_state)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a785281f5b9ecec8fdebdf35b87164df5">fsm_add</a> (char *state, void(*fun)(int, void **))</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#ae16d0ddb2c31ef6ca16af18101bada93">fsm_remove</a> (char *state)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a848093094aa1808fa8b706ea0c2189a4">fsm_to_state</a> (char *state, int num, void **arg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#ab3ba5df28cedba8b07cb0115044803ab">fsm_default</a> (char *state, void(*fun)(int, void **))</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#ae88c73afbad313b09ec31a8e790621a2">fsm_terminate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a7d9f32205d282874d1167e4f91311cfa">fsm_init</a> (struct <a class="el" href="structfsm__object.html">fsm_object</a> *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a8ee06d483f437f6408cd515891a30a50">fsm_main</a> (struct <a class="el" href="structfsm__object.html">fsm_object</a> *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#aeed86a14187df213c3ea7e9c8ce7d045">fsm_add</a> (struct <a class="el" href="structfsm__object.html">fsm_object</a> *obj, char *state, void(*fun)(int, void **))</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a31277e38d531321eed830cbaa3024a31">fsm_remove</a> (struct <a class="el" href="structfsm__object.html">fsm_object</a> *obj, char *state)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a8054eebfd3f366f29461388b7db6c5da">fsm_to_state</a> (struct <a class="el" href="structfsm__object.html">fsm_object</a> *obj, char *state, int num, void **arg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a1a9ea442e0125d5e73da5c02d03f52e7">fsm_default</a> (struct <a class="el" href="structfsm__object.html">fsm_object</a> *obj, void(*fun)(int, void **))</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a1e29b41ccb41ac220c1ffeb218881e2b">fsm_terminate</a> (struct <a class="el" href="structfsm__object.html">fsm_object</a> *obj)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>an implementation for a FSM in C for HTTPServe, this file contains implementation of definations in "fsm.h". </p>
+<p>an implementation for a FSM in C, this file contains implementation of definations. </p>
 <dl class="author"><dt><b>Author:</b></dt><dd>Ankur Shrivastava </dd></dl>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="a785281f5b9ecec8fdebdf35b87164df5"></a><!-- doxytag: member="fsm.c::fsm_add" ref="a785281f5b9ecec8fdebdf35b87164df5" args="(char *state, void(*fun)(int, void **))" -->
+<a class="anchor" id="aeed86a14187df213c3ea7e9c8ce7d045"></a><!-- doxytag: member="fsm.c::fsm_add" ref="aeed86a14187df213c3ea7e9c8ce7d045" args="(struct fsm_object *obj, char *state, void(*fun)(int, void **))" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int fsm_add </td>
           <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structfsm__object.html">fsm_object</a> *&nbsp;</td>
+          <td class="paramname"> <em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">char *&nbsp;</td>
           <td class="paramname"> <em>state</em>, </td>
         </tr>
@@ -90,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Function to add a new state to the FSM. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>pointer to structure of type <a class="el" href="structfsm__object.html" title="stores info regarding state machine">fsm_object</a>, which defines the FSM </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>name of the state to be added. </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>fun</em>&nbsp;</td><td>name of the function to be executed for this state </td></tr>
   </table>
@@ -98,15 +105,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
-<a class="anchor" id="ab3ba5df28cedba8b07cb0115044803ab"></a><!-- doxytag: member="fsm.c::fsm_default" ref="ab3ba5df28cedba8b07cb0115044803ab" args="(char *state, void(*fun)(int, void **))" -->
+<a class="anchor" id="a1a9ea442e0125d5e73da5c02d03f52e7"></a><!-- doxytag: member="fsm.c::fsm_default" ref="a1a9ea442e0125d5e73da5c02d03f52e7" args="(struct fsm_object *obj, void(*fun)(int, void **))" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int fsm_default </td>
           <td>(</td>
-          <td class="paramtype">char *&nbsp;</td>
-          <td class="paramname"> <em>state</em>, </td>
+          <td class="paramtype">struct <a class="el" href="structfsm__object.html">fsm_object</a> *&nbsp;</td>
+          <td class="paramname"> <em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -126,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Adds a default state to FSM, this is the function called at the start of the FSM or in case of error, with the appropriate error code </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>name of the state to be added. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>pointer to structure of type <a class="el" href="structfsm__object.html" title="stores info regarding state machine">fsm_object</a>, which defines the FSM </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>fun</em>&nbsp;</td><td>name of the function to be executed for this state </td></tr>
   </table>
   </dd>
@@ -134,14 +141,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
-<a class="anchor" id="af80641621eebe25ddf5033218b78148c"></a><!-- doxytag: member="fsm.c::fsm_init" ref="af80641621eebe25ddf5033218b78148c" args="()" -->
+<a class="anchor" id="a7d9f32205d282874d1167e4f91311cfa"></a><!-- doxytag: member="fsm.c::fsm_init" ref="a7d9f32205d282874d1167e4f91311cfa" args="(struct fsm_object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int fsm_init </td>
           <td>(</td>
-          <td class="paramname"></td>
+          <td class="paramtype">struct <a class="el" href="structfsm__object.html">fsm_object</a> *&nbsp;</td>
+          <td class="paramname"> <em>obj</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
         </tr>
@@ -149,18 +157,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 <p>Function to initialize the FSM </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>pointer to structure of type <a class="el" href="structfsm__object.html" title="stores info regarding state machine">fsm_object</a>, which defines the FSM </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a8d1e245793401a972ade9cd903674395"></a><!-- doxytag: member="fsm.c::fsm_main" ref="a8d1e245793401a972ade9cd903674395" args="(char *def_state)" -->
+<a class="anchor" id="a8ee06d483f437f6408cd515891a30a50"></a><!-- doxytag: member="fsm.c::fsm_main" ref="a8ee06d483f437f6408cd515891a30a50" args="(struct fsm_object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int fsm_main </td>
           <td>(</td>
-          <td class="paramtype">char *&nbsp;</td>
-          <td class="paramname"> <em>def_state</em></td>
+          <td class="paramtype">struct <a class="el" href="structfsm__object.html">fsm_object</a> *&nbsp;</td>
+          <td class="paramname"> <em>obj</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
         </tr>
@@ -170,24 +184,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The FSM entry point, this is where execution of code begins in FSM. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>def_state</em>&nbsp;</td><td>the default state of FSM </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>pointer to structure of type <a class="el" href="structfsm__object.html" title="stores info regarding state machine">fsm_object</a>, which defines the FSM </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="ae16d0ddb2c31ef6ca16af18101bada93"></a><!-- doxytag: member="fsm.c::fsm_remove" ref="ae16d0ddb2c31ef6ca16af18101bada93" args="(char *state)" -->
+<a class="anchor" id="a31277e38d531321eed830cbaa3024a31"></a><!-- doxytag: member="fsm.c::fsm_remove" ref="a31277e38d531321eed830cbaa3024a31" args="(struct fsm_object *obj, char *state)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int fsm_remove </td>
           <td>(</td>
-          <td class="paramtype">char *&nbsp;</td>
-          <td class="paramname"> <em>state</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">struct <a class="el" href="structfsm__object.html">fsm_object</a> *&nbsp;</td>
+          <td class="paramname"> <em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>state</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
@@ -196,20 +219,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>name of state to be removed </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>pointer to structure of type <a class="el" href="structfsm__object.html" title="stores info regarding state machine">fsm_object</a>, which defines the FSM </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="ae88c73afbad313b09ec31a8e790621a2"></a><!-- doxytag: member="fsm.c::fsm_terminate" ref="ae88c73afbad313b09ec31a8e790621a2" args="()" -->
+<a class="anchor" id="a1e29b41ccb41ac220c1ffeb218881e2b"></a><!-- doxytag: member="fsm.c::fsm_terminate" ref="a1e29b41ccb41ac220c1ffeb218881e2b" args="(struct fsm_object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void fsm_terminate </td>
           <td>(</td>
-          <td class="paramname"></td>
+          <td class="paramtype">struct <a class="el" href="structfsm__object.html">fsm_object</a> *&nbsp;</td>
+          <td class="paramname"> <em>obj</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
         </tr>
@@ -217,16 +242,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 <p>Function for FSM termination </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>pointer to structure of type <a class="el" href="structfsm__object.html" title="stores info regarding state machine">fsm_object</a>, which defines the FSM </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a848093094aa1808fa8b706ea0c2189a4"></a><!-- doxytag: member="fsm.c::fsm_to_state" ref="a848093094aa1808fa8b706ea0c2189a4" args="(char *state, int num, void **arg)" -->
+<a class="anchor" id="a8054eebfd3f366f29461388b7db6c5da"></a><!-- doxytag: member="fsm.c::fsm_to_state" ref="a8054eebfd3f366f29461388b7db6c5da" args="(struct fsm_object *obj, char *state, int num, void **arg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int fsm_to_state </td>
           <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structfsm__object.html">fsm_object</a> *&nbsp;</td>
+          <td class="paramname"> <em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">char *&nbsp;</td>
           <td class="paramname"> <em>state</em>, </td>
         </tr>
@@ -254,6 +291,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>changes state to the new specified state, if the state does not exist returns error, state change is not triggered till function calling fsm_to_state returns </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>pointer to structure of type <a class="el" href="structfsm__object.html" title="stores info regarding state machine">fsm_object</a>, which defines the FSM </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>name of state to chnage to </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>num</em>&nbsp;</td><td>number of arguments </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>arg</em>&nbsp;</td><td>arguments </td></tr>
@@ -278,7 +316,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on 14 Feb 2010 for HTTPServe by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on 15 Feb 2010 for HTTPServe by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
