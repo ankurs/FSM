@@ -68,8 +68,9 @@ int fsm_main(struct fsm_object *obj);
 
 /**
  * Execution of next state takes place here
- * @details function fsm_next can be used without fsm_main when want to hadel
+ * @details function fsm_next can be used without fsm_main when we want to hadel
  * state execution and not rely on fsm_main 's loop
+ * @param obj pointer to structure of type fsm_object, which defines the FSM
  */
 int fsm_next_state(struct fsm_object *obj);
 

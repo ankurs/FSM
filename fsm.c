@@ -25,7 +25,7 @@ int fsm_init(struct fsm_object *obj)
 
 /**
  * Execution of next state takes place here
- * @details function fsm_next can be used without fsm_main when want to hadel
+ * @details function fsm_next can be used without fsm_main when we want to hadel
  * state execution and not rely on fsm_main 's loop
  * @param obj pointer to structure of type fsm_object, which defines the FSM
  */
@@ -142,6 +142,15 @@ int fsm_default(struct fsm_object *obj, void (*fun)(struct fsm_object *, int ,vo
  */
 void fsm_terminate(struct fsm_object *obj)
 {
+    // delete all states to prevent memory leek
+    struct fsm_state *tmp = obj->fsm_base;
+    struct fsm_state *to_del=tmp;
+    while(tmp)
+    {
+        to_del = tmp;
+        tmp=tmp->next;
+        free(to_del);
+    }
     // reset FSM base to NULL causes while loop in fsm_main to quit
     // terminating the program
     obj->fsm_cur_state = NULL;
